@@ -72,7 +72,7 @@ foreach ($dataset as $record) {
         'council_reference' => trim($record->find('a',0)->plaintext),
         'address'           => preg_replace('/\s+/', ' ', trim($record->find('span', 1)->plaintext)) . ", Australia",
         'description'       => preg_replace('/\s+/', ' ', trim($record->find('span', 2)->plaintext)),
-        'info_url'          => $url_base . trim($record->find('a',0)->href),
+        'info_url'          => 'https://secure.auburn.nsw.gov.au/ePathway/Production/Web/GeneralEnquiry/EnquiryLists.aspx?ModuleCode=LAP',
         'comment_url'       => $comment_base . trim($record->find('a',0)->plaintext). ', '. preg_replace('/\s+/', ' ', trim($record->find('span', 1)->plaintext)),
         'date_scraped'      => date('Y-m-d'),
         'date_received'     => date('Y-m-d', strtotime($date_received))
